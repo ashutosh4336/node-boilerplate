@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-const { adminTest } = require('./controllers/admin');
+const { meetPeople } = require('./controllers/admin');
 
-router.route('/').get(adminTest);
+router.route('/').get(meetPeople);
 
 exports.router = router;
