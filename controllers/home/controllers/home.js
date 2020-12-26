@@ -1,10 +1,10 @@
 const crypto = require('crypto');
 
+// @desc        Test Route
+// @route       GET /api/v1/home
+// @access      Public
 exports.homeTest = async (req, res, next) => {
-  crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
-    return res.status(200).json({ message: 'Success' });
-  });
-  return res.status(200).json({ msg: 'Hi' });
+  return res.status(200).json({ msg: 'Hiiiiiiiiiiiiiiiii' });
 };
 
 // const doWork = (duration) => {

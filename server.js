@@ -8,6 +8,12 @@ const colors = require('colors');
 
 dotenv.config({ path: './config/config.env' });
 
+// Middleware for Better Performance
+const {
+  userAgentCheck,
+  stringifyBody,
+} = require('./middleware/customMiddleware');
+
 // I'm Slave
 // I'm Going to Act Like only salve / child / server :NOTHING ELSE:
 // Import DB
@@ -20,6 +26,9 @@ const allRoute = require('./routes/router');
 const app = express();
 
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
+
+app.use(userAgentCheck);
+app.use(stringifyBody);
 
 allRoute.routeLoader(app);
 
